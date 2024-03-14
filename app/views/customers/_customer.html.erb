@@ -1,0 +1,17 @@
+<div class="box">
+  <article class="media">
+    <div class="media-left">
+      <%= image_tag customer.image.variant(resize: "100x100") if customer.image.attached? %>
+    </div>
+    <div class="media-content">
+      <div class="content">
+        <p>
+          <strong><%= customer.full_name %></strong><br>
+          <%= customer.phone_number %><br>
+          <%= customer.email.present? ? customer.email : 'No email address' %><br>
+          <%= customer.notes %>
+        </p>
+      </div>
+    </div>
+  </article>
+</div>
