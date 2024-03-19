@@ -1,15 +1,19 @@
-<div class="customer">
-  <% if customer.present? %>
-    <% if customer.image.attached? %>
-      <%= image_tag url_for(customer.image) %>
-    <% else %>
-      <p>No image available</p>
-    <% end %>
-    <h3><%= customer.full_name %></h3>
-    <p><strong>Phone:</strong> <%= customer.phone_number %></p>
-    <p><strong>Email:</strong> <%= customer.email %></p>
-    <p><strong>Notes:</strong> <%= customer.notes %></p>
-  <% else %>
-    <p>Customer not found</p>
-  <% end %>
+<div class="card">
+  <div class="card-content">
+    <div class="media">
+      <div class="media-left">
+        <% if customer.image.attached? %>
+          <%= image_tag url_for(customer.image), class: "image is-128x128", alt: "Customer Image" %>
+        <% else %>
+          <div class="image-placeholder"></div> <!-- Placeholder for image -->
+        <% end %>
+      </div>
+      <div class="media-content">
+        <p class="title is-4"><%= customer.full_name %></p>
+        <p class="subtitle is-6"><strong>Phone:</strong> <%= customer.phone_number %></p>
+        <p class="subtitle is-6"><strong>Email:</strong> <%= customer.email %></p>
+        <p class="subtitle is-6"><strong>Notes:</strong> <%= customer.notes %></p>
+      </div>
+    </div>
+  </div>
 </div>
