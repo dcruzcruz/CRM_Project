@@ -5,3 +5,6 @@
 <%= link_to "Customers Missing Email", missing_email_customers_path %>
 <%= link_to "Alphabetized Customers", alphabetized_customers_path %>
 
+<% @customers.each do |customer| %>
+  <%= render partial: 'customer', locals: { customer: customer } %>
+<% end %>
