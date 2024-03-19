@@ -1,17 +1,15 @@
-<div class="box">
-  <article class="media">
-    <div class="media-left">
-      <%= image_tag customer.image.variant(resize: "100x100") if customer.image.attached? %>
-    </div>
-    <div class="media-content">
-      <div class="content">
-        <p>
-          <strong><%= customer.full_name %></strong><br>
-          <%= customer.phone_number %><br>
-          <%= customer.email.present? ? customer.email : 'No email address' %><br>
-          <%= customer.notes %>
-        </p>
-      </div>
-    </div>
-  </article>
+<div class="customer">
+  <% if customer.present? %>
+    <% if customer.image.attached? %>
+      <%= image_tag url_for(customer.image) %>
+    <% else %>
+      <p>No image available</p>
+    <% end %>
+    <h3><%= customer.full_name %></h3>
+    <p><strong>Phone:</strong> <%= customer.phone_number %></p>
+    <p><strong>Email:</strong> <%= customer.email %></p>
+    <p><strong>Notes:</strong> <%= customer.notes %></p>
+  <% else %>
+    <p>Customer not found</p>
+  <% end %>
 </div>
