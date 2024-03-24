@@ -18,7 +18,7 @@ NUMBER_OF_CUSTOMERS.times do
   )
 
   query = URI.encode_www_form_component(customer.full_name)
-  downloaded_image = URI.open("https://source.unsplash.com/100x100/?#{query}")
+  downloaded_image = URI.open("https://source.unsplash.com/600x600/?#{query}")
   customer.image.attach(io: downloaded_image, filename: "#{customer.full_name.parameterize}.jpg")
 end
 

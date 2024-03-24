@@ -1,18 +1,20 @@
 <div class="card">
-  <div class="card-content">
-    <div class="media">
-      <div class="media-left">
-        <% if customer.image.attached? %>
-          <%= image_tag url_for(customer.image), class: "image is-128x128", alt: "Customer Image" %>
-        <% else %>
-          <div class="image-placeholder"></div> <!-- Placeholder for image -->
-        <% end %>
+  <div class="card customer-card">
+    <% if customer.image.attached? %>
+      <div class="card-image">
+        <figure class="image is-256x256">
+          <%= image_tag url_for(customer.image), alt: "Customer Image" %>
+        </figure>
       </div>
-      <div class="media-content">
-        <p class="title is-4"><%= customer.full_name %></p>
-        <p class="subtitle is-6"><strong>Phone:</strong> <%= customer.phone_number %></p>
-        <p class="subtitle is-6"><strong>Email:</strong> <%= customer.email %></p>
-        <p class="subtitle is-6"><strong>Notes:</strong> <%= customer.notes %></p>
+    <% end %>
+    <div class="card-content">
+      <div class="content">
+        <p class="title">
+          <%= customer.full_name %>
+        </p>
+        <p>Phone: <%= customer.phone_number %></p>
+        <p>Email: <%= customer.email %></p>
+        <p>Notes: <%= customer.notes %></p>
       </div>
     </div>
   </div>

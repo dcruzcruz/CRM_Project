@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Your App Name</title>
-    <!-- Include Bulma CSS -->
-    <%= stylesheet_link_tag 'bulma' %>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-  </head>
-  <body>
-    <%= yield %>
-  </body>
+<head>
+  <title>Your App Name</title>
+  <%= stylesheet_link_tag 'application', 'bulma' %>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+</head>
+<body>
+  <%= yield %>
+</body>
 </html>

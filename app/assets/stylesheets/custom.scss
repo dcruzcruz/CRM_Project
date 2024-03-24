@@ -1,0 +1,19 @@
+// app/assets/stylesheets/custom.scss
+
+// Example custom styles
+.container {
+  padding: 20px;
+}
+
+.customer-card {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.customer-card img {
+  max-width: 50%;
+  border-radius: 5px;
+}
